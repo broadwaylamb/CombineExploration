@@ -7,7 +7,7 @@
 //
 
 
-import Combine
+import OpenCombine
 
 /// An "either" type around the possible values 
 public extension Subscribers {

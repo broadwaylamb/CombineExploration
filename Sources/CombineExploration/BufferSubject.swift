@@ -6,9 +6,10 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 import Foundation
 
+/* Unimplemented in OpenCombine
 public struct Buffer<Output, Failure: Error> {
 	var values: [Output] = []
 	var completion: Subscribers.Completion<Failure>? = nil
@@ -154,3 +155,4 @@ public class BufferSubject<Output, Failure: Error>: Subject, Publisher {
 		subscription.receive(subscription: Subscriptions.empty)
 	}
 }
+*/

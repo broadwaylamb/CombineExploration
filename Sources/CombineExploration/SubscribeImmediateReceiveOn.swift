@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Combine
+import OpenCombine
 
 public extension Publisher {
 	func subscribeImmediateReceive<S>(on scheduler: S, options: S.SchedulerOptions? = nil) -> SubscribeImmediateReceiveOn<Self, S> where S : Scheduler {

@@ -5,31 +5,33 @@
 //  Created by Matt Gallagher on 19/8/19.
 //
 
-import Combine
+import OpenCombine
+import OpenCombineDispatch
 import Foundation
 
 class MainScheduler: Scheduler {
-	var now: DispatchQueue.SchedulerTimeType {
-		return DispatchQueue.main.now
+
+    var now: DispatchQueue.OCombine.SchedulerTimeType {
+        return DispatchQueue.main.ocombine.now
 	}
 	
-	var minimumTolerance: DispatchQueue.SchedulerTimeType.Stride {
-		return DispatchQueue.main.minimumTolerance
+    var minimumTolerance: DispatchQueue.OCombine.SchedulerTimeType.Stride {
+        return DispatchQueue.main.ocombine.minimumTolerance
 	}
 	
-	func schedule(options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) {
+    func schedule(options: DispatchQueue.OCombine.SchedulerOptions?, _ action: @escaping () -> Void) {
 		if Thread.current.isMainThread {
 			action()
 		} else {
-			DispatchQueue.main.schedule(options: options, action)
+            DispatchQueue.main.ocombine.schedule(options: options, action)
 		}
 	}
 
-	func schedule(after date: DispatchQueue.SchedulerTimeType, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) {
-		DispatchQueue.main.schedule(after: date, tolerance: tolerance, options: options, action)
+    func schedule(after date: DispatchQueue.OCombine.SchedulerTimeType, tolerance: DispatchQueue.OCombine.SchedulerTimeType.Stride, options: DispatchQueue.OCombine.SchedulerOptions?, _ action: @escaping () -> Void) {
+        DispatchQueue.main.ocombine.schedule(after: date, tolerance: tolerance, options: options, action)
 	}
 
-	func schedule(after date: DispatchQueue.SchedulerTimeType, interval: DispatchQueue.SchedulerTimeType.Stride, tolerance: DispatchQueue.SchedulerTimeType.Stride, options: DispatchQueue.SchedulerOptions?, _ action: @escaping () -> Void) -> Cancellable {
-		DispatchQueue.main.schedule(after: date, interval: interval, tolerance: tolerance, options: options, action)
+    func schedule(after date: DispatchQueue.OCombine.SchedulerTimeType, interval: DispatchQueue.OCombine.SchedulerTimeType.Stride, tolerance: DispatchQueue.OCombine.SchedulerTimeType.Stride, options: DispatchQueue.OCombine.SchedulerOptions?, _ action: @escaping () -> Void) -> Cancellable {
+        DispatchQueue.main.ocombine.schedule(after: date, interval: interval, tolerance: tolerance, options: options, action)
 	}
 }

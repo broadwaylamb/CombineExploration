@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 
 /// A type that can receive values (but not completion) from an arbitrary number of upstream `Publisher`s.
 /// Implemented as a wrapper around a `PassthroughSubject` subscribes to upstream `Publisher`s, owns the subscription internally and removes the

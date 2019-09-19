@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 
 public extension Subject {
 	func send<S: Sequence>(sequence: S, completion: Subscribers.Completion<Self.Failure>? = nil) where S.Element == Self.Output {

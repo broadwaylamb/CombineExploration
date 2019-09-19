@@ -5,7 +5,7 @@
 //  Created by Matt Gallagher on 5/8/19.
 //
 
-import Combine
+import OpenCombine
 
 /// A custom implementation of `Publishers.Scan`
 public class CustomScan<Upstream: Publisher, Output>: Publisher {

@@ -8,10 +8,12 @@
 
 import XCTest
 import Foundation
-import Combine
+import OpenCombine
 import CombineExploration
 
 class LifecycleTests: XCTestCase {
+
+    /* Unimplemented in OpenCombine
 	func testSharedSubjectABCD() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let scanB = subjectA.scan(10) { state, next in state + next }
@@ -30,7 +32,9 @@ class LifecycleTests: XCTestCase {
 		sinkC.cancel()
 		sinkD.cancel()
 	}
+     */
 
+    /* Unimplemented in OpenCombine
 	func testMulticastABCD() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let multicastB = subjectA
@@ -53,7 +57,9 @@ class LifecycleTests: XCTestCase {
 		sinkD.cancel()
 		cancelB.cancel()
 	}
-	
+     */
+
+    /* Unimplemented in OpenCombine
 	func testBufferedABCD() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let multicastB = subjectA
@@ -77,7 +83,9 @@ class LifecycleTests: XCTestCase {
 		sinkD.cancel()
 		cancelB.cancel()
 	}
-	
+     */
+
+    /* Unimplemented in OpenCombine
 	func testMulticastLatestABCD() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let multicastB = subjectA
@@ -100,7 +108,9 @@ class LifecycleTests: XCTestCase {
 		sinkD.cancel()
 		cancelB.cancel()
 	}
-	
+     */
+
+    /* Unimplemented in OpenCombine
 	func testBufferMulticastABCD() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let multicastB = subjectA
@@ -123,6 +133,7 @@ class LifecycleTests: XCTestCase {
 		sinkD.cancel()
 		cancelB.cancel()
 	}
+     */
 
 	func testMultipleSubscribe() {
 		let subject1 = PassthroughSubject<Int, Never>()
@@ -285,7 +296,8 @@ class LifecycleTests: XCTestCase {
 			)
 		#endif
 	}
-	
+
+    /* Unimplemented in OpenCombine
 	func testSinkCancellationPlusAsyncDelivery() {
 		var received = [Subscribers.Event<Int, Never>]()
 		let sink = Just(1)
@@ -298,4 +310,5 @@ class LifecycleTests: XCTestCase {
 		RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.001))
 		XCTAssertEqual(received, [1].asEvents(completion: .finished))
 	}
+     */
 }

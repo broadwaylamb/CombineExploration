@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 
 /// A custom implementation of `PassthroughSubject`
 public class CustomSubject<Output, Failure: Error>: Subject, Publisher {

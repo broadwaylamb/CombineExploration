@@ -6,8 +6,9 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 
+/* Unimplemented in OpenCombine
 public extension Publisher {
 	func debug(prefix: String = "", function: String = #function, line: Int = #line) -> Publishers.HandleEvents<Self> {
 		let pattern = "\(prefix + (prefix.isEmpty ? "" : " "))\(function), line \(line): "
@@ -20,3 +21,4 @@ public extension Publisher {
 		)
 	}
 }
+*/

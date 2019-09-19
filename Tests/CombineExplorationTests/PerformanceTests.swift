@@ -8,7 +8,8 @@
 
 import XCTest
 import Foundation
-import Combine
+import OpenCombine
+import OpenCombineDispatch
 import RxSwift
 import CwlSignal
 
@@ -71,7 +72,7 @@ class PerformanceTests: XCTestCase {
 	}
 	
 	func testCombineSequenceDeliveryPerformance() {
-		let sequenceLength = 1_000_000
+		let sequenceLength = 2
 		let sequence = Publishers.Sequence<ClosedRange<Int>, Never>(sequence: 1...sequenceLength)
 		
 		var total = 0
@@ -120,7 +121,7 @@ class PerformanceTests: XCTestCase {
 		var total = 0
 		let t = mach_absolute_time()
 		let c = subject
-			.subscribeImmediateReceive(on: DispatchQueue(label: "test"))
+            .subscribeImmediateReceive(on: DispatchQueue(label: "test").ocombine)
 			.sink(receiveCompletion: { _ in semaphore.signal() }, receiveValue: { total += $0 })
 		withExtendedLifetime(c) {
 			for i in 1...sequenceLength {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Matt Gallagher ( https://www.cocoawithlove.com ). All rights reserved.
 //
 
-import Combine
+import OpenCombine
 
 /// A testing-only Subscriber that allows configuring the `demand` from outside. I don't see any practical use for this outside of testing Combine.
 public struct CustomDemandSink<Input, Failure: Error>: Subscriber, Cancellable {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Combine
+import OpenCombine
 
 /// A custom `Subscription` implementation
 /// This implementation is just a mutex wrapper around the underlying `SubscriptionBehavior` that does all the real work.

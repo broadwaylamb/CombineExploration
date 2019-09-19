@@ -8,7 +8,7 @@
 
 import XCTest
 import Foundation
-import Combine
+import OpenCombine
 import CombineExploration
 
 class ProtocolTests: XCTestCase {
@@ -25,7 +25,8 @@ class ProtocolTests: XCTestCase {
 		
 		XCTAssertEqual(received, (1...3).asEvents(completion: .finished))
 	}
-	
+
+    /* Unimplemented in OpenCombine
 	func testScanABC() {
 		let subjectA = PassthroughSubject<Int, Never>()
 		let scanB = subjectA.scan(10) { state, next in state + next }
@@ -40,7 +41,9 @@ class ProtocolTests: XCTestCase {
 		
 		XCTAssertEqual(receivedC, [11, 13, 16, 20].asEvents(completion: .finished))
 	}
-	
+     */
+
+    /* Unimplemented in OpenCombine
 	func testSequenceABCD() {
 		let sequenceA = Publishers.Sequence<ClosedRange<Int>, Never>(sequence: 1...4)
 		let scanB = Publishers.Scan(upstream: sequenceA, initialResult: 10) { state, next in state + next }
@@ -61,7 +64,9 @@ class ProtocolTests: XCTestCase {
 		XCTAssertEqual(receivedC, [11, 13, 16, 20].asEvents(completion: .finished))
 		XCTAssertEqual(receivedD, [11, 13, 16, 20].asEvents(completion: .finished))
 	}
-	
+     */
+
+    /* Unimplemented in OpenCombine
 	func testOverlappingABCD() {
 		var subjects = [PassthroughSubject<Int, Never>]()
 		let deferred = Deferred { () -> PassthroughSubject<Int, Never> in
@@ -90,6 +95,7 @@ class ProtocolTests: XCTestCase {
 		XCTAssertEqual(receivedC, [11, 13, 16, 20].asEvents(completion: .finished))
 		XCTAssertEqual(receivedD, [11, 13, 16, 20].asEvents(completion: .finished))
 	}
+     */
 	
 	func testCustomPublishCustomSink() {
 		let subject = CustomSubject<Int, Never>()
